@@ -215,7 +215,7 @@ if($user->isLoggedIn()){
                     'case_year' => array(
                         'required' => true,
                     ),
-                    'bact_conf_tb' => array(
+                    /*'bact_conf_tb' => array(
                         'required' => true,
                         'max' => 5
                     ),
@@ -413,7 +413,7 @@ if($user->isLoggedIn()){
                     'prev_lf_prev_treat' => array(
                         'required' => true,
                         'max' => 6
-                    ),
+                    ),*/
                 ));
                 if ($validate->passed()) {
                     $recLast = $override->lastRow('routine_data','id');
@@ -813,7 +813,7 @@ if($user->isLoggedIn()){
                         <p>&nbsp;</p>
                         <div class="block col-md-12">
                             <div class="alert alert-info">
-                                <b>NOTE : </b> <strong >If information is not available, please enter 99999. With exception of latitude and Longitude</strong>
+                                <b>NOTE : </b> <strong >If information is not available, please enter 999999. With exception of latitude and Longitude</strong>
                             </div>
                         </div>
                         <form method="post">
@@ -898,19 +898,19 @@ if($user->isLoggedIn()){
                                     <div class="form-row" id="s1">
                                         <div class="col-md-3">Bacteriological confirmed TB cases:</div>
                                         <div class="col-md-7" id="v_code">
-                                            <input type="number" name="bact_conf_tb" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="bact_conf_tb" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-3">Pulmonary Clinically diagnosed TB cases:</div>
                                         <div class="col-md-7" id="v_code">
-                                            <input type="number" name="pul_clinc_diag_tb" class="form-control" placeholder="Count/100,000"  max="99999" required=""/>
+                                            <input type="number" name="pul_clinc_diag_tb" class="form-control"   max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-3">Extra-pulmonary Clinically diagnosed:</div>
                                         <div class="col-md-7" id="v_code">
-                                            <input type="number" name="extra_pul_diag_tb" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="extra_pul_diag_tb" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <h6>&nbsp;</h6>
@@ -920,25 +920,25 @@ if($user->isLoggedIn()){
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Relapse:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="relapse" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="relapse" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Treatment after failure:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="treatment_after_failure" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="treatment_after_failure" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Return after lost to follow up:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="return_after_lost_follow_up" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="return_after_lost_follow_up" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Other previously treated:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="other_previously_treated" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="other_previously_treated" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <h6>&nbsp;</h6>
@@ -948,31 +948,31 @@ if($user->isLoggedIn()){
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Number Tested:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_no_tested" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="hiv_no_tested" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">HIV Positive Cases:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_positive_case" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="hiv_positive_case" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Registered For HIV Care:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_register_for_care" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="hiv_register_for_care" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Started ARV:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_start_art" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="hiv_start_art" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Started CPT:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_started_cpt" class="form-control" placeholder="Count/100,000" max="99999" required=""/>
+                                            <input type="number" name="hiv_started_cpt" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
                                     <h4>&nbsp;</h4>

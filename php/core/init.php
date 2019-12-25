@@ -3,9 +3,9 @@ session_start();
 
 $GLOBALS['config'] = array(
   'mysql' => array(
-      'host' => '127.0.0.1',
-      'username' => 'root',
-      'password' => '',
+      'host' => 'localhost',
+      'username' => 'frd',
+      'password' => 'frdrck@1',
       'db' => 'tbnode'
   	),
   'remember' =>array(
