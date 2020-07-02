@@ -33,6 +33,7 @@ $country=$override->get('country','id',$user->data()->c_id);
         <a href="add.php?id=1" data-backdrop="static" data-keyboard="false" class="list-group-item"><span class="icon-bar-chart"></span>PREVALENCE SURVEY<i class="icon-angle-right pull-right"></i></a>
         <a href="add.php?id=2" class="list-group-item"><span class="icon-file-text"></span>CLUSTER PREVALENCE<i class="icon-angle-right pull-right"></i></a>
         <a href="add.php?id=3" class="list-group-item"><span class="icon-cogs"></span>ROUTINE DATA<i class="icon-angle-right pull-right"></i></a>
+        <a href="add.php?id=4" class="list-group-item"><span class="icon-file-alt"></span>MDR TB Notification<i class="icon-angle-right pull-right"></i></a>
         <?php if($user->data()->access_level == 1){?>
             <a href="info.php?id=8" class="list-group-item"><span class="icon-download-alt"></span>DOWNLOAD<i class="icon-angle-right pull-right"></i></a>
         <?php }?>

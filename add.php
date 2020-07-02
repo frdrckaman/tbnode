@@ -2,6 +2,7 @@
 require_once'php/core/init.php';
 $user = new User();
 $override = new OverideData();
+$validate = new validate();
 $pageError = null;$successMessage = null;$errorM = false;$errorMessage = null;$l_row=0;$rec_id='';
 
 if($user->isLoggedIn()){
@@ -486,6 +487,57 @@ if($user->isLoggedIn()){
                             }
                         }
                         $successMessage = 'Data Saved Successful';
+
+                    } catch (Exception $e) {
+                        die($e->getMessage());
+                    }
+                } else {
+                    $pageError = $validate->errors();
+                }
+            }
+        }
+        elseif ($_GET['id'] == 4){
+            if(Input::get('mdr_data')){
+                //$validate = new validate();
+                $validate = $validate->check($_POST, array(
+                    'total_mdr_year' => array(
+                        'required' => true,
+                    ),
+                    'total_no_mdr_cases' => array(
+                        'required' => true,
+                    ),
+                ));
+                if ($validate->passed()) {
+                    $recLast = $override->lastRow('mdr_tb_notification','id');
+                    if($recLast){$l_row=$recLast[0]['id']+1;$rec_id=$country[0]['short_code'].'-'.$l_row.'-MDR-'.date('m-d');}
+                    try {
+                        $user->createRecord('mdr_tb_notification', array(
+                            'total_mdr_year' => Input::get('total_mdr_year'),
+                            'record_id' => $rec_id,
+                            'total_no_mdr_cases' => Input::get('total_no_mdr_cases'),
+                            'region_mdr_position' => Input::get('region_mdr_position'),
+                            'region_mdr_year' => Input::get('region_mdr_year'),
+                            'region_mdr' => Input::get('region_mdr'),
+                            'region_no_mdr_cases' => Input::get('region_no_mdr_cases'),
+                            'gender_mdr_sex' => Input::get('gender_mdr_sex'),
+                            'gender_mdr_year' => Input::get('gender_mdr_year'),
+                            'gender_no_mdr_cases' => Input::get('gender_no_mdr_cases'),
+                            'trmnt_mdr_year' => Input::get('trmnt_mdr_year'),
+                            'trmnt_mdr_outcome' => Input::get('trmnt_mdr_outcome'),
+                            'trmnt_no_mdr_cases' => Input::get('trmnt_no_mdr_cases'),
+                            'status' => 1,
+                            'rec_date' => date('Y-m-d'),
+                            'c_id' => $user->data()->c_id,
+                            'staff_id' => $user->data()->id,
+                        ));
+                        if($rec_id == ''){
+                            $l_r=$override->lastRow('mdr_tb_notification','id');
+                            if($l_r){
+                                $rec_id=$country[0]['short_code'].'-'.$l_r[0]['id'].'-MDR-'.date('m-d');
+                                $user->updateRecord('mdr_tb_notification',array('record_id' => $rec_id),$l_r[0]['id']);
+                            }
+                        }
+                        $successMessage = 'Data Saved Successful ';
 
                     } catch (Exception $e) {
                         die($e->getMessage());
@@ -1100,6 +1152,141 @@ if($user->isLoggedIn()){
                             <div class="modal-footer">
                                 <div class="pull-right col-md-3">
                                     <input type="submit" name="routine_data" value="SAVE" class="btn btn-success">
+                                </div>
+                            </div>
+                        </form>
+                    <?php }
+                    elseif ($_GET['id'] == 4){ ?>
+                        <div class="header">
+                            <h2>MDRTB Notification</h2>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div class="block col-md-12">
+                            <div class="alert alert-info">
+                                <b>NOTE : </b> <strong >If information is not available, please enter 99999</strong>
+                            </div>
+                        </div>
+                        <form method="post">
+                            <div class="modal-body clearfix">
+                                <h1>&nbsp;</h1>
+                                <h6>MDR TB notified total for ten years 2009-2018 (presented in yearly data)</h6>
+                                <h1>&nbsp;</h1>
+                                <div class="controls">
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">SELECT YEAR:</div>
+                                        <div class="col-md-4" id="v_code">
+                                            <select class="form-control" id="year" name="total_mdr_year" required="">
+                                                <option value=""> Year</option>
+                                                <?php $x=2009;while ($x<=2018){?>
+                                                    <option value="<?=$x?>"><?=$x?></option>
+                                                    <?php $x++;}?>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-4" id="v_code">
+                                            <input type="number" name="total_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                        </div>
+                                    </div>
+
+                                    <h1>&nbsp;</h1>
+                                    <h6><strong><i>MDR TB notified in three most affected regions for ten years 2009-2018 (presented in yearly data)</i></strong></h6>
+                                    <h1>&nbsp;</h1>
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Position:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <select class="form-control" id="" name="region_mdr_position" required="">
+                                                <option value=""> Position .... </option>
+                                                <option value="1st">1st</option>
+                                                <option value="2nd">2nd</option>
+                                                <option value="3rd">3rd</option>
+                                                <option value="4th">4th</option>
+                                                <option value="5th">5th</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-1">Year:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <select class="form-control" id="year" name="region_mdr_year" required="">
+                                                <option value=""> Year</option>
+                                                <?php $x=2009;while ($x<=2018){?>
+                                                    <option value="<?=$x?>"><?=$x?></option>
+                                                    <?php $x++;}?>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1">Region:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <input type="text" name="region_mdr" class="form-control"  required=""/>
+                                        </div>
+                                        <div class="col-md-1">Number of MDR cases:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <input type="number" name="region_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                        </div>
+                                    </div>
+
+                                    <h1>&nbsp;</h1>
+                                    <h6><strong><i>MDR TB notified per gender for ten years 2009-2018 (presented in yearly data)</i></strong></h6>
+                                    <h1>&nbsp;</h1>
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Gender:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="gender_mdr_sex" required="">
+                                                <option value="">Select Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-1">Year:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <select class="form-control" id="year" name="gender_mdr_year" required="">
+                                                <option value=""> Year</option>
+                                                <?php $x=2009;while ($x<=2018){?>
+                                                    <option value="<?=$x?>"><?=$x?></option>
+                                                    <?php $x++;}?>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="gender_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                        </div>
+                                    </div>
+
+                                    <h1>&nbsp;</h1>
+                                    <h6><strong><i>Treatment outcome for MDR TB for ten years 2009-2018 (presented in yearly data)</i></strong></h6>
+                                    <h1>&nbsp;</h1>
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Year:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <select class="form-control" id="year" name="trmnt_mdr_year" required="">
+                                                <option value=""> Year</option>
+                                                <?php $x=2009;while ($x<=2018){?>
+                                                    <option value="<?=$x?>"><?=$x?></option>
+                                                    <?php $x++;}?>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1">Treatment outcome:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome" required="">
+                                                <option value="">Select...</option>
+                                                <option value="Enrolled for treatment">Enrolled for treatment</option>
+                                                <option value="Cured">Cured</option>
+                                                <option value="Completed">Completed</option>
+                                                <option value="Failed">Failed</option>
+                                                <option value="Died">Died</option>
+                                                <option value="Treatment success">Treatment success</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="trmnt_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="pull-right col-md-3">
+                                    <input type="submit" name="mdr_data" value="SAVE" class="btn btn-success">
                                 </div>
                             </div>
                         </form>

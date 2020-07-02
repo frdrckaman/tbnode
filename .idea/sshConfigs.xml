@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="195.110.58.19" id="2f176a8d-e543-485c-b3d7-25a383f619b3" port="22" customName="tbnode.exit-tb.org" nameFormat="CUSTOM" username="root" />
+    </configs>
+  </component>
+</project>

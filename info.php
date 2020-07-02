@@ -182,6 +182,10 @@ if($user->isLoggedIn()) {
                 $data=$override->getData('routine_data');
                 $user->exportData($data,'routine_data');
             }
+            elseif (Input::get('download_mdr')){
+                $data=$override->getData('mdr_tb_notification');
+                $user->exportData($data,'mdr_tb_notification');
+            }
             elseif (Input::get('download_f1')){
                 $data=$override->get('prevalence_survey','c_id',$_GET['c']);
                 $user->exportData($data,'routine_data');
@@ -1185,6 +1189,15 @@ if($user->isLoggedIn()) {
                                             <td>
                                                 <form method="post">
                                                     <div class="btn-group btn-group-xs"><input type="submit" name="download_routine" value="Download Excel" class="btn btn-info btn-clean"></div>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>MDR TB NOTIFICATION DATA</td>
+                                            <td><?=$override->getNo('mdr_tb_notification')?></td>
+                                            <td>
+                                                <form method="post">
+                                                    <div class="btn-group btn-group-xs"><input type="submit" name="download_mdr" value="Download Excel" class="btn btn-info btn-clean"></div>
                                                 </form>
                                             </td>
                                         </tr>

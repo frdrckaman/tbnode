@@ -4,7 +4,7 @@ $user = new User();
 $override = new OverideData();
 $pageError = null;$successMessage = null;$errorM = false;$errorMessage = null;
 $t_crf=0;$p_crf=0;$w_crf=0;$s_name=null;$c_name=null;$site=null;$country=null;
-$study_crf=null;$data_limit=10000;$ps=0;$cp=0;$rd=0;$ttl=0;
+$study_crf=null;$data_limit=10000;$ps=0;$cp=0;$rd=0;$ttl=0;$mdr=0;
 //modification remove all pilot crf have been removed/deleted from study crf
 if($user->isLoggedIn()) {
     $country=$override->get('country','id',$user->data()->c_id);
@@ -12,12 +12,14 @@ if($user->isLoggedIn()) {
         $ps=$override->getCount('prevalence_survey','status',1);
         $cp=$override->getCount('clients_demographic_info','status',1);
         $rd=$override->getCount('routine_data','status',1);
-        $ttl=$ps+$cp+$rd;
+        $mdr=$override->getCount('mdr_tb_notification','status',1);
+        $ttl=$ps+$cp+$rd+$mdr;
     }elseif ($user->data()->access_level == 4){
         $ps=$override->countData('prevalence_survey','status',1,'c_id',$user->data()->c_id);
         $cp=$override->countData('clients_demographic_info','status',1,'c_id',$user->data()->c_id);
         $rd=$override->countData('routine_data','status',1,'c_id',$user->data()->c_id);
-        $ttl=$ps+$cp+$rd;
+        $mdr=$override->countData('mdr_tb_notification','status',1,'c_id',$user->data()->c_id);
+        $ttl=$ps+$cp+$rd+$mdr;
     }
 
 }else{
@@ -206,6 +208,34 @@ if($user->isLoggedIn()) {
                 <div class="head-panel nm tac" style="line-height: 0px;">
                     <div class="knob">
                         <input type="text" data-fgColor="#3F97FE" data-min="0" data-max="<?=$data_limit?>" data-width="100" data-height="100" value="<?=$rd?>" data-readOnly="true"/>
+                    </div>
+                </div>
+                <div class="head-panel nm">
+                    <div class="hp-info hp-simple pull-left">
+                        <span class="hp-main"></span>
+                        <span class="hp-sm"></span>
+                    </div>
+                    <div class="hp-info hp-simple pull-right">
+                        <span class="hp-main"></span>
+                        <span class="hp-sm"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="block block-drop-shadow">
+            <div class="head bg-dot20">
+                <h2>MDR TB NOTIFICATION</h2>
+                <div class="side pull-right">
+                    <ul class="buttons">
+                        <li><a href="#"><span class="icon-cogs"></span></a></li>
+                    </ul>
+                </div>
+                <div class="head-subtitle"></div>
+                <div class="head-panel nm tac" style="line-height: 0px;">
+                    <div class="knob">
+                        <input type="text" data-fgColor="#3F97FE" data-min="0" data-max="<?=$data_limit?>" data-width="100" data-height="100" value="<?=$mdr?>" data-readOnly="true"/>
                     </div>
                 </div>
                 <div class="head-panel nm">

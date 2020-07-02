@@ -2,12 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e8eef3f5-73f1-428c-b774-09bb968ecaa5" name="tbnode.exit-tb.org" url="http://195.110.58.19">
-        <fileTransfer host="195.110.58.19" port="22" rootFolder="/var/www/tbnode.exit-tb.org/public_html" accessType="SFTP">
+      <webServer id="e8eef3f5-73f1-428c-b774-09bb968ecaa5" name="tbnode.exit-tb.org" url="http://localhost/tbnode">
+        <fileTransfer rootFolder="/var/www/tbnode.exit-tb.org/public_html" accessType="SFTP" host="195.110.58.19" port="22" sshConfigId="2f176a8d-e543-485c-b3d7-25a383f619b3" sshConfig="tbnode.exit-tb.org">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>
