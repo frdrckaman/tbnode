@@ -215,6 +215,7 @@ if($user->isLoggedIn()) {
                                     <li><a href="info.php?id=3&c=<?=$country['id']?>">PREVALENCE SURVEY</a></li>
                                     <li><a href="info.php?id=5&c=<?=$country['id']?>">CLUSTER PREVALENCE</a></li>
                                     <li><a href="info.php?id=6&c=<?=$country['id']?>">ROUTINE DATA</a></li>
+                                    <li><a href="info.php?id=9&c=<?=$country['id']?>">MDR TB NOTIFICATION</a></li>
                                 </ul>
                             </li>
                         <?php }?>

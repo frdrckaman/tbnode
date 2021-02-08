@@ -510,21 +510,49 @@ if($user->isLoggedIn()){
                 if ($validate->passed()) {
                     $recLast = $override->lastRow('mdr_tb_notification','id');
                     if($recLast){$l_row=$recLast[0]['id']+1;$rec_id=$country[0]['short_code'].'-'.$l_row.'-MDR-'.date('m-d');}
+                    print_r(Input::get('trmnt_mdr_outcome_success'));
                     try {
                         $user->createRecord('mdr_tb_notification', array(
-                            'total_mdr_year' => Input::get('total_mdr_year'),
                             'record_id' => $rec_id,
+                            'total_mdr_year' => Input::get('total_mdr_year'),
+
                             'total_no_mdr_cases' => Input::get('total_no_mdr_cases'),
-                            'region_mdr_position' => Input::get('region_mdr_position'),
-                            'region_mdr_year' => Input::get('region_mdr_year'),
-                            'region_mdr' => Input::get('region_mdr'),
-                            'region_no_mdr_cases' => Input::get('region_no_mdr_cases'),
-                            'gender_mdr_sex' => Input::get('gender_mdr_sex'),
-                            'gender_mdr_year' => Input::get('gender_mdr_year'),
-                            'gender_no_mdr_cases' => Input::get('gender_no_mdr_cases'),
-                            'trmnt_mdr_year' => Input::get('trmnt_mdr_year'),
-                            'trmnt_mdr_outcome' => Input::get('trmnt_mdr_outcome'),
-                            'trmnt_no_mdr_cases' => Input::get('trmnt_no_mdr_cases'),
+                            'region_mdr_position_1st' => Input::get('region_mdr_position_1st'),
+                            '1st_region_mdr' => Input::get('1st_region_mdr'),
+                            '1st_region_no_mdr_cases' => Input::get('1st_region_no_mdr_cases'),
+
+                            'region_mdr_position_2nd' => Input::get('region_mdr_position_2nd'),
+                            '2nd_region_mdr' => Input::get('2nd_region_mdr'),
+                            '2nd_region_no_mdr_cases' => Input::get('2nd_region_no_mdr_cases'),
+
+                            'region_mdr_position_3rd' => Input::get('region_mdr_position_3rd'),
+                            '3rd_region_mdr' => Input::get('3rd_region_mdr'),
+                            '3rd_region_no_mdr_cases' => Input::get('3rd_region_no_mdr_cases'),
+
+                            'male_mdr_sex' => Input::get('male_mdr_sex'),
+                            'male_no_mdr_cases' => Input::get('male_no_mdr_cases'),
+
+                            'female_mdr_sex' => Input::get('female_mdr_sex'),
+                            'female_no_mdr_cases' => Input::get('female_no_mdr_cases'),
+
+                            'trmnt_mdr_outcome_enrolled' => Input::get('trmnt_mdr_outcome_enrolled'),
+                            'trmnt_no_mdr_cases_enrolled' => Input::get('trmnt_no_mdr_cases_enrolled'),
+
+                            'trmnt_mdr_outcome_cured' => Input::get('trmnt_mdr_outcome_cured'),
+                            'trmnt_no_mdr_cases_cured' => Input::get('trmnt_no_mdr_cases_cured'),
+
+                            'trmnt_mdr_outcome_completed' => Input::get('trmnt_mdr_outcome_completed'),
+                            'trmnt_no_mdr_cases_completed' => Input::get('trmnt_no_mdr_cases_completed'),
+
+                            'trmnt_mdr_outcome_failed' => Input::get('trmnt_mdr_outcome_failed'),
+                            'trmnt_no_mdr_cases_failed' => Input::get('trmnt_no_mdr_cases_failed'),
+//
+                            'trmnt_mdr_outcome_died' => Input::get('trmnt_mdr_outcome_died'),
+                            'trmnt_no_mdr_cases_died' => Input::get('trmnt_no_mdr_cases_died'),
+//
+                            'trmnt_mdr_outcome_success' => Input::get('trmnt_mdr_outcome_success'),
+                            'trmnt_no_mdr_cases_success' => Input::get('trmnt_no_mdr_cases_success'),
+
                             'status' => 1,
                             'rec_date' => date('Y-m-d'),
                             'c_id' => $user->data()->c_id,
@@ -1169,7 +1197,7 @@ if($user->isLoggedIn()){
                         <form method="post">
                             <div class="modal-body clearfix">
                                 <h1>&nbsp;</h1>
-                                <h6>MDR TB notified total for ten years 2009-2018 (presented in yearly data)</h6>
+                                <h6>MDR TB notified total for ten years 2009-2018 (presented in yearly data) </h6>
                                 <h1>&nbsp;</h1>
                                 <div class="controls">
                                     <div class="form-row" id="s1">
@@ -1189,99 +1217,209 @@ if($user->isLoggedIn()){
                                     </div>
 
                                     <h1>&nbsp;</h1>
-                                    <h6><strong><i>MDR TB notified in three most affected regions for ten years 2009-2018 (presented in yearly data)</i></strong></h6>
+                                    <h6><strong><i>MDR TB notified in three most affected regions for year <strong style="color: orangered;font-size: large" id="pyr"></strong> (presented in yearly data)</i></strong></h6>
                                     <h1>&nbsp;</h1>
+<!--                                    1st-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Position:</div>
                                         <div class="col-md-2" id="v_code">
-                                            <select class="form-control" id="" name="region_mdr_position" required="">
-                                                <option value=""> Position .... </option>
+                                            <select class="form-control" id="" name="region_mdr_position_1st" required="">
                                                 <option value="1st">1st</option>
-                                                <option value="2nd">2nd</option>
-                                                <option value="3rd">3rd</option>
-                                                <option value="4th">4th</option>
-                                                <option value="5th">5th</option>
                                             </select>
                                         </div>
 
-                                        <div class="col-md-1">Year:</div>
+<!--                                        <div class="col-md-1">Year:</div>-->
+<!--                                        <div class="col-md-2" id="v_code">-->
+<!--                                            <select class="form-control" id="year" name="region_mdr_year" required="">-->
+<!--                                                <option value=""> Year</option>-->
+<!--                                                --><?php //$x=2009;while ($x<=2018){?>
+<!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
+<!--                                                    --><?php //$x++;}?>
+<!--                                            </select>-->
+<!--                                        </div>-->
+                                        <div class="col-md-1">Region:</div>
                                         <div class="col-md-2" id="v_code">
-                                            <select class="form-control" id="year" name="region_mdr_year" required="">
-                                                <option value=""> Year</option>
-                                                <?php $x=2009;while ($x<=2018){?>
-                                                    <option value="<?=$x?>"><?=$x?></option>
-                                                    <?php $x++;}?>
+                                            <input type="text" name="1st_region_mdr" class="form-control"  required=""/>
+                                        </div>
+                                        <div class="col-md-1">Number of MDR cases:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <input type="number" name="1st_region_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                        </div>
+                                    </div>
+<!--                                    2nd-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Position:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <select class="form-control" id="" name="region_mdr_position_2nd" required="">
+                                                <option value="2nd">2nd</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-1">Region:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <input type="text" name="2nd_region_mdr" class="form-control"  required=""/>
+                                        </div>
+                                        <div class="col-md-1">Number of MDR cases:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <input type="number" name="2nd_region_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                        </div>
+                                    </div>
+<!--                                    3rd-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Position:</div>
+                                        <div class="col-md-2" id="v_code">
+                                            <select class="form-control" id="" name="region_mdr_position_3rd" required="">
+                                                <option value="3rd">3rd</option>
                                             </select>
                                         </div>
                                         <div class="col-md-1">Region:</div>
                                         <div class="col-md-2" id="v_code">
-                                            <input type="text" name="region_mdr" class="form-control"  required=""/>
+                                            <input type="text" name="3rd_region_mdr" class="form-control"  required=""/>
                                         </div>
                                         <div class="col-md-1">Number of MDR cases:</div>
                                         <div class="col-md-2" id="v_code">
-                                            <input type="number" name="region_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="3rd_region_no_mdr_cases" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
 
                                     <h1>&nbsp;</h1>
-                                    <h6><strong><i>MDR TB notified per gender for ten years 2009-2018 (presented in yearly data)</i></strong></h6>
+                                    <h6><strong><i>MDR TB notified per gender for year <strong style="color: orangered;font-size: large" id="gyr"></strong> (presented in yearly data)</i></strong></h6>
                                     <h1>&nbsp;</h1>
+<!--                                    male-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Gender:</div>
                                         <div class="col-md-3" id="v_code">
-                                            <select class="form-control" id="year" name="gender_mdr_sex" required="">
-                                                <option value="">Select Gender</option>
+                                            <select class="form-control" id="year" name="male_mdr_sex" required="">
                                                 <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
                                             </select>
                                         </div>
 
-                                        <div class="col-md-1">Year:</div>
-                                        <div class="col-md-2" id="v_code">
-                                            <select class="form-control" id="year" name="gender_mdr_year" required="">
-                                                <option value=""> Year</option>
-                                                <?php $x=2009;while ($x<=2018){?>
-                                                    <option value="<?=$x?>"><?=$x?></option>
-                                                    <?php $x++;}?>
+<!--                                        <div class="col-md-1">Year:</div>-->
+<!--                                        <div class="col-md-2" id="v_code">-->
+<!--                                            <select class="form-control" id="year" name="gender_mdr_year" required="">-->
+<!--                                                <option value=""> Year</option>-->
+<!--                                                --><?php //$x=2009;while ($x<=2018){?>
+<!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
+<!--                                                    --><?php //$x++;}?>
+<!--                                            </select>-->
+<!--                                        </div>-->
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="male_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                        </div>
+                                    </div>
+<!--                                    female-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Gender:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="female_mdr_sex" required="">
+                                                <option value="Female">Female</option>
                                             </select>
                                         </div>
                                         <div class="col-md-2">Number of MDR cases:</div>
                                         <div class="col-md-3" id="v_code">
-                                            <input type="number" name="gender_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="female_no_mdr_cases" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
 
                                     <h1>&nbsp;</h1>
-                                    <h6><strong><i>Treatment outcome for MDR TB for ten years 2009-2018 (presented in yearly data)</i></strong></h6>
+                                    <h6><strong><i>Treatment outcome for MDR TB for year <strong id="tyr" style="color: orangered;font-size: large" ></strong> (presented in yearly data)</i></strong></h6>
                                     <h1>&nbsp;</h1>
+<!--                                    enrolled-->
                                     <div class="form-row" id="s1">
-                                        <div class="col-md-1">Year:</div>
-                                        <div class="col-md-2" id="v_code">
-                                            <select class="form-control" id="year" name="trmnt_mdr_year" required="">
-                                                <option value=""> Year</option>
-                                                <?php $x=2009;while ($x<=2018){?>
-                                                    <option value="<?=$x?>"><?=$x?></option>
-                                                    <?php $x++;}?>
-                                            </select>
-                                        </div>
+<!--                                        <div class="col-md-1">Year:</div>-->
+<!--                                        <div class="col-md-2" id="v_code">-->
+<!--                                            <select class="form-control" id="year" name="trmnt_mdr_year" required="">-->
+<!--                                                <option value=""> Year</option>-->
+<!--                                                --><?php //$x=2009;while ($x<=2018){?>
+<!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
+<!--                                                    --><?php //$x++;}?>
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                    Enrolled-->
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
-                                            <select class="form-control" id="year" name="trmnt_mdr_outcome" required="">
-                                                <option value="">Select...</option>
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_enrolled" required="">
                                                 <option value="Enrolled for treatment">Enrolled for treatment</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="trmnt_no_mdr_cases_enrolled" class="form-control"  max="999999" required=""/>
+                                        </div>
+
+                                    </div>
+<!--                                    cured-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Treatment outcome:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_cured" required="">
                                                 <option value="Cured">Cured</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="trmnt_no_mdr_cases_cured" class="form-control"  max="999999" required=""/>
+                                        </div>
+
+                                    </div>
+<!--                                    complete-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Treatment outcome:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_completed" required="">
                                                 <option value="Completed">Completed</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="trmnt_no_mdr_cases_completed" class="form-control"  max="999999" required=""/>
+                                        </div>
+
+                                    </div>
+<!--                                    fail-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Treatment outcome:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_failed" required="">
                                                 <option value="Failed">Failed</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="trmnt_no_mdr_cases_failed" class="form-control"  max="999999" required=""/>
+                                        </div>
+
+                                    </div>
+<!--                                    die-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Treatment outcome:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_died" required="">
                                                 <option value="Died">Died</option>
                                                 <option value="Treatment success">Treatment success</option>
                                             </select>
                                         </div>
                                         <div class="col-md-2">Number of MDR cases:</div>
                                         <div class="col-md-3" id="v_code">
-                                            <input type="number" name="trmnt_no_mdr_cases" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="trmnt_no_mdr_cases_died" class="form-control"  max="999999" required=""/>
                                         </div>
-                                    </div>
 
+                                    </div>
+<!--                                    success-->
+                                    <div class="form-row" id="s1">
+                                        <div class="col-md-1">Treatment outcome:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_success" required="">
+                                                <option value="Treatment success">Treatment success</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">Number of MDR cases:</div>
+                                        <div class="col-md-3" id="v_code">
+                                            <input type="number" name="trmnt_no_mdr_cases_success" class="form-control"  max="999999" required=""/>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -1338,6 +1476,17 @@ if($user->isLoggedIn()){
                 success:function(data){
                     //$('#site_i').html(data);
                     //$('#s_i').show();
+                    //$('#w_i').hide();
+                }
+            });
+        });
+        $('#year').change(function(){
+            var c_yr = $(this).val();
+            $.ajax({
+                success:function(data){
+                    $('#pyr').html(c_yr);
+                    $('#gyr').html(c_yr);
+                    $('#tyr').html(c_yr);
                     //$('#w_i').hide();
                 }
             });

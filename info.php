@@ -198,6 +198,10 @@ if($user->isLoggedIn()) {
                 $data=$override->get('routine_data','c_id',$_GET['c']);
                 $user->exportData($data,'routine_data');
             }
+            elseif (Input::get('download_f4')){
+                $data=$override->get('mdr_tb_notification','c_id',$_GET['c']);
+                $user->exportData($data,'mdr_tb_notification');
+            }
             elseif (Input::get('download_all')){
                 $data=$override->getData('routine_data');
                 $user->exportData($data,'routine_data');
@@ -1202,6 +1206,49 @@ if($user->isLoggedIn()) {
                                             </td>
                                         </tr>
                                     <?php }?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php }
+        elseif ($_GET['id'] == 9){?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <div class="header">
+                            <h2>ROUTINE DATA</h2>
+                            <div class="pull-right">
+                                <form method="post">
+                                    <input type="submit" name="download_f4" class="btn btn-primary btn-clean pull-right" value="Download Data" />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <table cellpadding="0" cellspacing="0" width="100%" class="table table-bordered table-striped sortable">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>RECORD ID</th>
+                                    <th>YEAR</th>
+                                    <th>DATA</th>
+                                    <th>MANAGE</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php $x=1;if($user->data()->access_level == 1){$cn_id = $_GET['c'];}else{$cn_id = $user->data()->c_id;}
+                                foreach($override->getNews('mdr_tb_notification','status',1,'c_id',$cn_id) as $data){?>
+                                    <tr>
+                                        <td><?=$x?></td>
+                                        <td><?=$data['record_id']?></td>
+                                        <td><?=$data['total_mdr_year']?></td>
+                                        <td><strong>No of MDR Case:</strong> <?=$data['total_no_mdr_cases'].' .... '?><strong> No of male MDR cases : </strong> <?=$data['male_no_mdr_cases']?><strong> No of female MDR cases :</strong><?=$data['male_no_mdr_cases'].' ....'?></td>
+                                        <td>
+                                            <div class="btn-group btn-group-xs"><a href="#" class="btn btn-info btn-clean"><span class="icon-eye-open"></span> View more details</a></div>
+                                        </td>
+                                    </tr>
+                                    <?php $x++;}?>
                                 </tbody>
                             </table>
                         </div>
