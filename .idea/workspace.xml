@@ -4,8 +4,6 @@
     <list default="true" id="853b8cb7-fe7c-4d7f-82f8-9389dba6ac63" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/topBar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,11 @@
       <workItem from="1593504163321" duration="1257000" />
       <workItem from="1593694092291" duration="99000" />
       <workItem from="1593698657742" duration="9000" />
-      <workItem from="1612766635323" duration="12038000" />
+      <workItem from="1612766635323" duration="12801000" />
+      <workItem from="1613113506131" duration="1858000" />
+      <workItem from="1613125445246" duration="640000" />
+      <workItem from="1613981020005" duration="614000" />
+      <workItem from="1614151547298" duration="81000" />
     </task>
     <servers />
   </component>
@@ -87,17 +89,9 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="215" width="800" height="683" key="#Deployment" timestamp="1590600748759">
+    <state x="746" y="312" width="424" height="490" key="FileChooserDialogImpl" timestamp="1613985148502">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="558" y="215" width="800" height="683" key="#Deployment/0.27.1920.1053@0.27.1920.1053" timestamp="1590600748759" />
-    <state x="540" y="208" width="832" height="710" key="#SSH_Configurations" timestamp="1590600732459">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="540" y="208" width="832" height="710" key="#SSH_Configurations/0.27.1920.1053@0.27.1920.1053" timestamp="1590600732459" />
-    <state x="746" y="307" width="424" height="490" key="FileChooserDialogImpl" timestamp="1593698663326">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="746" y="307" width="424" height="490" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1593698663326" />
+    <state x="746" y="312" width="424" height="490" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1613985148502" />
   </component>
 </project>

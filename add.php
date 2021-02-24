@@ -550,8 +550,8 @@ if($user->isLoggedIn()){
                             'trmnt_mdr_outcome_died' => Input::get('trmnt_mdr_outcome_died'),
                             'trmnt_no_mdr_cases_died' => Input::get('trmnt_no_mdr_cases_died'),
 //
-                            'trmnt_mdr_outcome_success' => Input::get('trmnt_mdr_outcome_success'),
-                            'trmnt_no_mdr_cases_success' => Input::get('trmnt_no_mdr_cases_success'),
+                            'trmnt_mdr_outcome_lost_followup' => Input::get('trmnt_mdr_outcome_lost_followup'),
+                            'trmnt_no_mdr_cases_lost_followup' => Input::get('trmnt_no_mdr_cases_lost_followup'),
 
                             'status' => 1,
                             'rec_date' => date('Y-m-d'),
@@ -1410,13 +1410,13 @@ if($user->isLoggedIn()){
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
-                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_success" required="">
-                                                <option value="Treatment success">Treatment success</option>
+                                            <select class="form-control" id="year" name="trmnt_mdr_outcome_lost_followup" required="">
+                                                <option value="Treatment success">Lost follow up</option>
                                             </select>
                                         </div>
                                         <div class="col-md-2">Number of MDR cases:</div>
                                         <div class="col-md-3" id="v_code">
-                                            <input type="number" name="trmnt_no_mdr_cases_success" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="trmnt_no_mdr_cases_lost_followup" class="form-control"  max="999999" required=""/>
                                         </div>
 
                                     </div>
