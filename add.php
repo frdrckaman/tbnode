@@ -1000,25 +1000,25 @@ if($user->isLoggedIn()){
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Relapse:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="relapse" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="relapse" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Treatment after failure:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="treatment_after_failure" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="treatment_after_failure" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Return after lost to follow up:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="return_after_lost_follow_up" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="return_after_lost_follow_up" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Other previously treated:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="other_previously_treated" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="other_previously_treated" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <h6>&nbsp;</h6>
@@ -1028,37 +1028,37 @@ if($user->isLoggedIn()){
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Number Tested:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_no_tested" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="hiv_no_tested" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">HIV Positive Cases:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_positive_case" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="hiv_positive_case" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Registered For HIV Care:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_register_for_care" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="hiv_register_for_care" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Started ARV:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_start_art" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="hiv_start_art" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <div class="form-row" id="s1">
                                         <div class="col-md-2">Started CPT:</div>
                                         <div class="col-md-8" id="v_code">
-                                            <input type="number" name="hiv_started_cpt" class="form-control"  max="999999" required=""/>
+                                            <input type="number" name="hiv_started_cpt" class="form-control"  max="9999999" required=""/>
                                         </div>
                                     </div>
                                     <h4>&nbsp;</h4>
                                     <div class="block">
                                         <div class="header">
-                                            <h2>TB treatment outcome of new and relapse TB cases &nbsp;&nbsp;<strong style="color: #1DC116">( NOTE : If information is not available, please enter 999999 )</strong></h2>
+                                            <h2>TB treatment outcome of new and relapse TB cases &nbsp;&nbsp;<strong style="color: #1DC116">( NOTE : If information is not available, please enter 9999999 )</strong></h2>
                                         </div>
                                         <div class="content">
                                             <table class="table table-bordered table-striped table-hover">
@@ -1074,45 +1074,45 @@ if($user->isLoggedIn()){
                                                 <tbody>
                                                 <tr>
                                                     <td>Cured</td>
-                                                    <td><input type="number" name="nw_cured_bact_conf" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_cured_bact_conf" class="form-control" max="9999999" required></td>
                                                     <td></td>
                                                     <td></td>
-                                                    <td><input type="number" name="nw_cured_relapse" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_cured_relapse" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Treatment completed</td>
-                                                    <td><input type="number" name="nw_tc_bact_conf" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_tc_cli_diag" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_tc_cli_diag_extra" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_tc_relapse" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_tc_bact_conf" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_tc_cli_diag" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_tc_cli_diag_extra" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_tc_relapse" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Treatment Success</td>
-                                                    <td><input type="number" name="nw_ts_bact_conf" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_ts_cli_diag" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_ts_cli_diag_extra" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_ts_relapse" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_ts_bact_conf" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_ts_cli_diag" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_ts_cli_diag_extra" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_ts_relapse" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Failure</td>
-                                                    <td><input type="number" name="nw_fl_bact_conf" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_fl_bact_conf" class="form-control" max="9999999" required></td>
                                                     <td></td>
                                                     <td></td>
-                                                    <td><input type="number" name="nw_fl_relapse" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_fl_relapse" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Died</td>
-                                                    <td><input type="number" name="nw_died_bact_conf" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_died_cli_diag" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_died_bact_conf" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_died_cli_diag" class="form-control" max="9999999" required></td>
                                                     <td><input type="number" name="nw_died_cli_diag_extra" class="form-control" required></td>
-                                                    <td><input type="number" name="nw_died_relapse" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_died_relapse" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Lost to follow up</td>
-                                                    <td><input type="number" name="nw_lf_bact_conf" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_lf_cli_diag" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_lf_cli_diag_extra" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="nw_lf_relapse" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="nw_lf_bact_conf" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_lf_cli_diag" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_lf_cli_diag_extra" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="nw_lf_relapse" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -1121,7 +1121,7 @@ if($user->isLoggedIn()){
                                     <h4>&nbsp;</h4>
                                     <div class="block">
                                         <div class="header">
-                                            <h2>Treatment outcome of previously treated (except relapse) cases &nbsp;&nbsp;<strong style="color: #1DC116">( NOTE : If information is not available, please enter 999999 )</strong></h2>
+                                            <h2>Treatment outcome of previously treated (except relapse) cases &nbsp;&nbsp;<strong style="color: #1DC116">( NOTE : If information is not available, please enter 9999999 )</strong></h2>
                                         </div>
                                         <div class="content">
                                             <table class="table table-bordered table-striped table-hover">
@@ -1136,39 +1136,39 @@ if($user->isLoggedIn()){
                                                 <tbody>
                                                 <tr>
                                                     <td>Cured</td>
-                                                    <td><input type="number" name="prev_cure_treat_failure" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_cure_treat_lst_flw" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_cure_prev_treat" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="prev_cure_treat_failure" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_cure_treat_lst_flw" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_cure_prev_treat" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Treatment completed</td>
-                                                    <td><input type="number" name="prev_tc_treat_failure" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_tc_treat_lst_flw" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_tc_prev_treat" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="prev_tc_treat_failure" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_tc_treat_lst_flw" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_tc_prev_treat" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Treatment Success</td>
-                                                    <td><input type="number" name="prev_ts_treat_failure" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_ts_treat_lst_flw" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_ts_prev_treat" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="prev_ts_treat_failure" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_ts_treat_lst_flw" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_ts_prev_treat" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Failure</td>
-                                                    <td><input type="number" name="prev_fl_treat_failure" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_fl_treat_lst_flw" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_fl_prev_treat" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="prev_fl_treat_failure" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_fl_treat_lst_flw" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_fl_prev_treat" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Died</td>
-                                                    <td><input type="number" name="prev_died_treat_failure" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_died_treat_lst_flw" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_died_prev_treat" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="prev_died_treat_failure" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_died_treat_lst_flw" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_died_prev_treat" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Lost to follow up</td>
-                                                    <td><input type="number" name="prev_lf_treat_failure" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_lf_treat_lst_flw" class="form-control" max="999999" required></td>
-                                                    <td><input type="number" name="prev_lf_prev_treat" class="form-control" max="999999" required></td>
+                                                    <td><input type="number" name="prev_lf_treat_failure" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_lf_treat_lst_flw" class="form-control" max="9999999" required></td>
+                                                    <td><input type="number" name="prev_lf_prev_treat" class="form-control" max="9999999" required></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -1219,7 +1219,7 @@ if($user->isLoggedIn()){
                                     <h1>&nbsp;</h1>
                                     <h6><strong><i>MDR TB notified in three most affected regions for year <strong style="color: orangered;font-size: large" id="pyr"></strong> (presented in yearly data)</i></strong></h6>
                                     <h1>&nbsp;</h1>
-<!--                                    1st-->
+                                    <!--                                    1st-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Position:</div>
                                         <div class="col-md-2" id="v_code">
@@ -1228,15 +1228,15 @@ if($user->isLoggedIn()){
                                             </select>
                                         </div>
 
-<!--                                        <div class="col-md-1">Year:</div>-->
-<!--                                        <div class="col-md-2" id="v_code">-->
-<!--                                            <select class="form-control" id="year" name="region_mdr_year" required="">-->
-<!--                                                <option value=""> Year</option>-->
-<!--                                                --><?php //$x=2009;while ($x<=2018){?>
-<!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
-<!--                                                    --><?php //$x++;}?>
-<!--                                            </select>-->
-<!--                                        </div>-->
+                                        <!--                                        <div class="col-md-1">Year:</div>-->
+                                        <!--                                        <div class="col-md-2" id="v_code">-->
+                                        <!--                                            <select class="form-control" id="year" name="region_mdr_year" required="">-->
+                                        <!--                                                <option value=""> Year</option>-->
+                                        <!--                                                --><?php //$x=2009;while ($x<=2018){?>
+                                        <!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
+                                        <!--                                                    --><?php //$x++;}?>
+                                        <!--                                            </select>-->
+                                        <!--                                        </div>-->
                                         <div class="col-md-1">Region:</div>
                                         <div class="col-md-2" id="v_code">
                                             <input type="text" name="1st_region_mdr" class="form-control"  required=""/>
@@ -1246,7 +1246,7 @@ if($user->isLoggedIn()){
                                             <input type="number" name="1st_region_no_mdr_cases" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
-<!--                                    2nd-->
+                                    <!--                                    2nd-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Position:</div>
                                         <div class="col-md-2" id="v_code">
@@ -1264,7 +1264,7 @@ if($user->isLoggedIn()){
                                             <input type="number" name="2nd_region_no_mdr_cases" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
-<!--                                    3rd-->
+                                    <!--                                    3rd-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Position:</div>
                                         <div class="col-md-2" id="v_code">
@@ -1285,7 +1285,7 @@ if($user->isLoggedIn()){
                                     <h1>&nbsp;</h1>
                                     <h6><strong><i>MDR TB notified per gender for year <strong style="color: orangered;font-size: large" id="gyr"></strong> (presented in yearly data)</i></strong></h6>
                                     <h1>&nbsp;</h1>
-<!--                                    male-->
+                                    <!--                                    male-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Gender:</div>
                                         <div class="col-md-3" id="v_code">
@@ -1294,21 +1294,21 @@ if($user->isLoggedIn()){
                                             </select>
                                         </div>
 
-<!--                                        <div class="col-md-1">Year:</div>-->
-<!--                                        <div class="col-md-2" id="v_code">-->
-<!--                                            <select class="form-control" id="year" name="gender_mdr_year" required="">-->
-<!--                                                <option value=""> Year</option>-->
-<!--                                                --><?php //$x=2009;while ($x<=2018){?>
-<!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
-<!--                                                    --><?php //$x++;}?>
-<!--                                            </select>-->
-<!--                                        </div>-->
+                                        <!--                                        <div class="col-md-1">Year:</div>-->
+                                        <!--                                        <div class="col-md-2" id="v_code">-->
+                                        <!--                                            <select class="form-control" id="year" name="gender_mdr_year" required="">-->
+                                        <!--                                                <option value=""> Year</option>-->
+                                        <!--                                                --><?php //$x=2009;while ($x<=2018){?>
+                                        <!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
+                                        <!--                                                    --><?php //$x++;}?>
+                                        <!--                                            </select>-->
+                                        <!--                                        </div>-->
                                         <div class="col-md-2">Number of MDR cases:</div>
                                         <div class="col-md-3" id="v_code">
                                             <input type="number" name="male_no_mdr_cases" class="form-control"  max="999999" required=""/>
                                         </div>
                                     </div>
-<!--                                    female-->
+                                    <!--                                    female-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Gender:</div>
                                         <div class="col-md-3" id="v_code">
@@ -1325,18 +1325,18 @@ if($user->isLoggedIn()){
                                     <h1>&nbsp;</h1>
                                     <h6><strong><i>Treatment outcome for MDR TB for year <strong id="tyr" style="color: orangered;font-size: large" ></strong> (presented in yearly data)</i></strong></h6>
                                     <h1>&nbsp;</h1>
-<!--                                    enrolled-->
+                                    <!--                                    enrolled-->
                                     <div class="form-row" id="s1">
-<!--                                        <div class="col-md-1">Year:</div>-->
-<!--                                        <div class="col-md-2" id="v_code">-->
-<!--                                            <select class="form-control" id="year" name="trmnt_mdr_year" required="">-->
-<!--                                                <option value=""> Year</option>-->
-<!--                                                --><?php //$x=2009;while ($x<=2018){?>
-<!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
-<!--                                                    --><?php //$x++;}?>
-<!--                                            </select>-->
-<!--                                        </div>-->
-<!--                                    Enrolled-->
+                                        <!--                                        <div class="col-md-1">Year:</div>-->
+                                        <!--                                        <div class="col-md-2" id="v_code">-->
+                                        <!--                                            <select class="form-control" id="year" name="trmnt_mdr_year" required="">-->
+                                        <!--                                                <option value=""> Year</option>-->
+                                        <!--                                                --><?php //$x=2009;while ($x<=2018){?>
+                                        <!--                                                    <option value="--><?//=$x?><!--">--><?//=$x?><!--</option>-->
+                                        <!--                                                    --><?php //$x++;}?>
+                                        <!--                                            </select>-->
+                                        <!--                                        </div>-->
+                                        <!--                                    Enrolled-->
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
                                             <select class="form-control" id="year" name="trmnt_mdr_outcome_enrolled" required="">
@@ -1349,7 +1349,7 @@ if($user->isLoggedIn()){
                                         </div>
 
                                     </div>
-<!--                                    cured-->
+                                    <!--                                    cured-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
@@ -1363,7 +1363,7 @@ if($user->isLoggedIn()){
                                         </div>
 
                                     </div>
-<!--                                    complete-->
+                                    <!--                                    complete-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
@@ -1377,7 +1377,7 @@ if($user->isLoggedIn()){
                                         </div>
 
                                     </div>
-<!--                                    fail-->
+                                    <!--                                    fail-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
@@ -1391,7 +1391,7 @@ if($user->isLoggedIn()){
                                         </div>
 
                                     </div>
-<!--                                    die-->
+                                    <!--                                    die-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
@@ -1406,12 +1406,12 @@ if($user->isLoggedIn()){
                                         </div>
 
                                     </div>
-<!--                                    success-->
+                                    <!--                                    success-->
                                     <div class="form-row" id="s1">
                                         <div class="col-md-1">Treatment outcome:</div>
                                         <div class="col-md-3" id="v_code">
                                             <select class="form-control" id="year" name="trmnt_mdr_outcome_lost_followup" required="">
-                                                <option value="Treatment success">Lost follow up</option>
+                                                <option value="Lost follow up">Lost follow up</option>
                                             </select>
                                         </div>
                                         <div class="col-md-2">Number of MDR cases:</div>
