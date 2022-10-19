@@ -283,23 +283,7 @@ if($user->isLoggedIn()) {
             <h2>NOTIFICATIONS</h2>
         </div>
         <div class="content list">
-            <!--<div class="list-item">
-                <div class="list-datetime">
-                    <div class="time">9:45 am</div>
-                </div>
-                <div class="list-info">
-                    <img src="img/example/user/dmitry.jpg" class="img-circle img-thumbnail"/>
-                </div>
-                <div class="list-text">
-                    <a href="#" class="list-text-name">John Doe</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum nisl velit.</p>
-                </div>
-                <div class="list-controls">
-                    <a href="#" class="widget-icon widget-icon-circle"><span class="icon-rotate-right"></span></a>
-                    <a href="#" class="widget-icon widget-icon-circle"><span class="icon-pushpin"></span></a>
-                    <a href="#" class="widget-icon widget-icon-circle"><span class="icon-remove"></span></a>
-                </div>
-            </div>-->
+
         </div>
         <div class="footer tac">
             <a href="#">Load more messages</a>
