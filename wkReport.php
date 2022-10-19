@@ -389,8 +389,6 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
                         </body>
                     </html>';
 
-//print_r($body);
-//print_r($staffs);
 $emails = array('frdrckaman@gmail.com','gsmfinanga@yahoo.com','senkorombazi@gmail.com');
 
 //foreach ($staffs as $staff){

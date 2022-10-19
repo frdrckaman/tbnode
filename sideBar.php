@@ -22,13 +22,6 @@ $country=$override->get('country','id',$user->data()->c_id);
             <?php }?>
         </div>
     </div>
-    <!--<div class="content list-group list-group-icons">
-        <a href="#upload" data-toggle="modal" class="list-group-item"><span class="icon-bar-chart"></span>Upload CRFs<i class="icon-angle-right pull-right"></i></a>
-        <a href="#" class="list-group-item"><span class="icon-envelope"></span>Notification<i class="icon-angle-right pull-right"></i></a>
-        <a href="#" class="list-group-item"><span class="icon-cogs"></span>Queries<i class="icon-angle-right pull-right"></i></a>
-        <a href="#" class="list-group-item"><span class="icon-edit-sign"></span>Suggestion<i class="icon-angle-right pull-right"></i></a>
-        <a href="logout.php" class="list-group-item"><span class="icon-off"></span>Logout<i class="icon-angle-right pull-right"></i></a>
-    </div>-->
     <div class="content list-group list-group-icons">
         <a href="add.php?id=1" data-backdrop="static" data-keyboard="false" class="list-group-item"><span class="icon-bar-chart"></span>PREVALENCE SURVEY<i class="icon-angle-right pull-right"></i></a>
         <a href="add.php?id=2" class="list-group-item"><span class="icon-file-text"></span>CLUSTER PREVALENCE<i class="icon-angle-right pull-right"></i></a>
