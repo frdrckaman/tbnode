@@ -157,7 +157,8 @@ if($user->isLoggedIn()) {
                         'password' => Hash::make($password, $salt),
                         'salt' => $salt,
                         'count' => 0,
-                        'token' => ''
+                        'token' => '',
+                        'pswd' => 1,
                     ), Input::get('id'));
                     $successMessage = 'Password Reset Successful';
                 }
