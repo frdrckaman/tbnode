@@ -143,13 +143,21 @@ if($user->isLoggedIn()) {
                 //$password = '123456';
                 $token = $rand->get_rand_alphanumeric(8);
                 try{
-                    $user->updateRecord('staff',array(
-                        'token'=>$token
-                    ),Input::get('id'));
-                    $link='https://tbnode.exit-tb.org/reset.php?token='.$token;//reset url
-                    if($email->resetPassword(Input::get('email'),Input::get('lastname'),'RESET PASSWORD',$link)){
-                        $successMessage = 'Email with Password Reset Link sent Successful';
-                    }
+//                    $user->updateRecord('staff',array(
+//                        'token'=>$token
+//                    ),Input::get('id'));
+//                    $link='https://tbnode.exit-tb.org/reset.php?token='.$token;//reset url
+//                    if($email->resetPassword(Input::get('email'),Input::get('lastname'),'RESET PASSWORD',$link)){
+//                        $successMessage = 'Email with Password Reset Link sent Successful';
+//                    }
+                    $salt = $random->get_rand_alphanumeric(32);
+                    $password = '12345678';
+                    $user->updateRecord('user', array(
+                        'password' => Hash::make($password, $salt),
+                        'salt' => $salt,
+                        'count' => 0,
+                    ), Input::get('id'));
+                    $successMessage = 'Password Reset Successful';
                 }
                 catch (PDOException $e){
                     $e->getMessage();

@@ -4,9 +4,9 @@ session_start();
 $GLOBALS['config'] = array(
   'mysql' => array(
       'host' => 'localhost',
-      'username' => '',
-      'password' => '',
-      'db' => ''
+      'username' => 'frd',
+      'password' => 'frdrck@1',
+      'db' => 'tbnode'
   	),
   'remember' =>array(
       'cookie_name' => 'hash',

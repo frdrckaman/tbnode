@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="853b8cb7-fe7c-4d7f-82f8-9389dba6ac63" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/core/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/core/init.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hetacov" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -88,6 +88,9 @@
       <workItem from="1624867500493" duration="99000" />
       <workItem from="1624867608065" duration="64000" />
       <workItem from="1624872888833" duration="103000" />
+      <workItem from="1666712058894" duration="29000" />
+      <workItem from="1690703947461" duration="846000" />
+      <workItem from="1692536828633" duration="38000" />
     </task>
     <servers />
   </component>
@@ -95,9 +98,9 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="215" width="800" height="683" key="#Deployment" timestamp="1624867134327">
+    <state x="746" y="312" width="424" height="490" key="FileChooserDialogImpl" timestamp="1692536862619">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="558" y="215" width="800" height="683" key="#Deployment/0.27.1920.1053@0.27.1920.1053" timestamp="1624867134327" />
+    <state x="746" y="312" width="424" height="490" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1692536862619" />
   </component>
 </project>
