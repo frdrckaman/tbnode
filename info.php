@@ -141,6 +141,7 @@ if($user->isLoggedIn()) {
             elseif(Input::get('reset_password')){
                // $salt = Hash::salt(32);
                 //$password = '123456';
+                $password = '12345678';
                 $token = $rand->get_rand_alphanumeric(8);
                 try{
 //                    $user->updateRecord('staff',array(
@@ -150,12 +151,13 @@ if($user->isLoggedIn()) {
 //                    if($email->resetPassword(Input::get('email'),Input::get('lastname'),'RESET PASSWORD',$link)){
 //                        $successMessage = 'Email with Password Reset Link sent Successful';
 //                    }
-//                    $salt = $random->get_rand_alphanumeric(32);
-                    $password = '12345678';
+                    $salt = $random->get_rand_alphanumeric(32);
+
                     $user->updateRecord('user', array(
-                        'password' => Hash::make($password, $token),
-                        'salt' => $token,
+                        'password' => Hash::make($password, $salt),
+                        'salt' => $salt,
                         'count' => 0,
+                        'token' => ''
                     ), Input::get('id'));
                     $successMessage = 'Password Reset Successful';
                 }
